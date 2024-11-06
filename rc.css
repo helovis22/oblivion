@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cab47c;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #346038;
+    box-shadow: 0 2px 4px #653F26(127, 168, 50, 0.1);
+}
+.menu {
+    display: flex;
+    gap: 0px;
+    margin-left: 1000px;
+}
+.menu-item {
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-item:hover {
+    color: #346038;
+}
+.name{
+    display: flex;
+    gap: 0px;
+}
+.site-name{
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    font-size: 25px;
+    transition: color 0.3s;
+}
+.site-name:hover{
+    color: #346038;
+}
+.container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+h2 {
+    text-align: center;
+    color: #391C14;
+    font-family: Roboto;
+    margin-top: 60px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: 20px auto;
+   
+    border-radius: 20px;
+}
+
+/* Cabeçalho da Tabela */
+table th {
+    background-color: #653F26; /* Cor de fundo do cabeçalho */
+    color: white;
+    padding: 12px;
+    text-align: center;
+
+}
+
+/* Células de Dados */
+table td {
+    border: 1px solid #653F26;
+    padding: 12px;
+    text-align: center;
+}
+
+
+
+/* Imagem nas células */
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+footer {
+    background-color: #346038;
+    color: #cab47c;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    top: 500px;
+    width: 100%;
+}
+.footer-content p {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 0;
+}

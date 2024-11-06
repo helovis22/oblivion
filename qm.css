@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cab47c;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #346038;
+    box-shadow: 0 2px 4px rgba(127, 168, 50, 0.1);
+}
+.menu {
+    display: flex;
+    gap: 0px;
+    margin-left: 1000px;
+}
+.menu-item {
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-item:hover {
+    color: #346038;
+}
+.name{
+    display: flex;
+    gap: 0px;
+}
+.site-name{
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    font-size: 25px;
+    transition: color 0.3s;
+}
+.info-box {
+    background-color: #346038;
+    padding: 7 0px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 20px;
+    width: 800px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+.info-box h1 {
+    font-size: 50px;
+    font-weight: 50px;
+    color: #cab47c;
+    margin-bottom: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+    padding-top: 40px;
+    text-align: center;
+    font-family: Inria Serif;
+}
+hr{
+    border: 1px solid #cab47c; /* Altere a cor conforme necessário */
+    margin: 40px 0; /* Espaçamento acima e abaixo da linha */
+    width: 50%; /* Altere a porcentagem conforme necessário */
+    margin-left: auto; /* Alinha a linha ao centro */
+    margin-right: auto; /* Alinha a linha ao centro */
+    
+}
+.info-box p {
+    font-size: 20px;
+    font-weight: 10px;
+    color: #cab47c;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 30px;
+    font-family: Rosarivo;
+    padding-top: 20px;
+}
+footer {
+    background-color: #346038;
+    color: #cab47c;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    top: 500px;
+    width: 100%;
+}
+.footer-content p {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+@media(max-width:768px) {
+    .menu {
+        flex-direction: column; /* Muda a direção do menu em telas menores */
+        align-items: center; /* Centraliza os itens do menu */
+        margin-left: 0; /* Remove a margem esquerda */
+    }
+    .menu {
+        flex-direction: column; /* Muda a direção do menu em telas menores */
+        align-items: center; /* Centraliza os itens do menu */
+        margin-left: 0; /* Remove a margem esquerda */
+    }
+    .info-box {
+        padding: 15px; /* Menos padding em telas menores */
+    }
+    .info-box h1 {
+        font-size: 2rem; /* Tamanho reduzido */
+        margin: 20px 30px; /* Menos margem */
+    }
+    hr {
+        width: 80%; /* Aumenta a largura da linha em telas menores */
+    }
+    .info-box p {
+        font-size: 1rem; /* Tamanho reduzido */
+        margin: 10px 20px; /* Menos margem */
+    }
+    footer {
+        padding: 10px; /* Menos padding em telas menores */
+    }
+}
+
+@media(max-width:480px) {
+    .site-name {
+        font-size: 1rem; /* Tamanho ainda menor */
+    }
+    .info-box h1 {
+        font-size: 1.5rem; /* Tamanho reduzido */
+    }
+    .info-box p {
+        font-size: 0.9rem; /* Tamanho reduzido */
+    }
+    .footer-content p {
+        font-size: 0.8rem; /* Tamanho reduzido */
+    }
+}

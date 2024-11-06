@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cab47c;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #346038;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1.5rem; /* Tamanho reduzido para responsividade */
+    margin-right: 550px ;
+}
+
+.menu-item:hover {
+    color: #346038;
+}
+
+.name {
+    display: flex;
+    gap: 10px;
+}
+
+.site-name {
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    font-size: 1.2rem; /* Tamanho reduzido para responsividade */
+    transition: color 0.3s;
+  
+}     
+
+.site-name:hover {
+    color: #346038; 
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se necessário */
+}
+
+.content {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    padding: 20px; 
+}
+
+.text-container {
+    text-align: center; 
+    border-radius: 15px; 
+    padding: 40px; 
+    max-width: 600px; 
+    width: 100%; 
+    font-family: Inria Serif;
+    font-size: 2rem; /* Tamanho reduzido para responsividade */
+}
+
+.text-container h1 {
+    font-weight: 300;
+    font-size: 5rem; /* Ajustado para responsividade */
+    color: #391c14;
+}
+
+hr {
+    border: 1px solid #391c14; 
+    margin: 20px 0; 
+}
+
+.text-container p {
+    font-size: 1.5rem; /* Tamanho reduzido para responsividade */
+    margin-bottom: 10px;
+    color: #391c14;
+    font-family: Asap;
+}
+
+.btn-start {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #346038;
+    color: #cab47c;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-size: 1.2rem; /* Tamanho reduzido para responsividade */
+}
+
+.btn-start:hover {
+    background-color: #27442f;
+}
+
+.foto-mulher {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.imagem {
+    width: 100%; /* Agora a imagem ocupa 100% do espaço do contêiner */
+    width: 600px; /* Largura máxima para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+footer {
+    background-color: #346038;
+    color: #cab47c;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+/* Media Queries para melhorar a responsividade */
+/* Responsividade aprimorada */
+
+@media (max-width: 1128px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        margin: 5px 0;
+    }
+
+    .text-container {
+        padding: 20px;
+    }
+
+    .text-container h1 {
+        font-size: 3rem;
+    }
+
+    .text-container h2 {
+        font-size: 2rem;
+    }
+
+    .text-container p {
+        font-size: 1.2rem;
+    }
+
+    .btn-start {
+        font-size: 1rem;
+    }
+
+    /* Ocultar a imagem em telas menores */
+    .foto-mulher {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        font-size: 1rem;
+    }
+
+    .search-txt {
+        font-size: 14px;
+    }
+
+    .search-btn {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Tornar o título ainda menor em telas muito pequenas */
+    .text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    /* Ajusta ainda mais o botão */
+    .btn-start {
+        font-size: 0.9rem;
+    }
+}

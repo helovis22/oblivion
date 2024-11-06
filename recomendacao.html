@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendações de produtos</title>
+    <link rel="stylesheet" href="rc.css">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <a href="index.html" class="site-name">Oblivion</a>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="menu-item">Início</a>
+        </div>
+    </header>
+
+    <div class="product-recommendations">
+        <h2>Recomendações de Produtos</h2>
+        <table id="product-list">
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Nome</th>
+                    <th>Cor</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Produtos recomendados -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const subtone = localStorage.getItem('subtone');
+        console.log("Subtone: ", subtone);
+        const productList = document.querySelector('#product-list tbody');
+
+        function recommendProducts(subtone) {
+            let products = [];
+
+            if (subtone === 'Subtom Quente') {
+                products = [
+                    { name: 'Base Líquida Pro Longwear', color: 'Dourado 5Q', type: 'Matte', brand: 'Quem Disse Berenice', img: 'https://eldorado.hubsell.com.br/media/catalog/product/4/1/4188571-conf_base-53308-1_1.png' },
+                    { name: 'Corretivo Vegano', color: 'Médio 03', type: 'Matte', brand: 'Sallve', img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/Q79907/Corretivo-Liquido-Longa-Duracao-Cor-8_Q79907_.jpg' },
+                    { name: 'Pó Solto HD', color: 'Natural', type: 'Translúcido', brand: 'Vult', img: 'https://images-americanas.b2w.io/produtos/2093731830/imagens/po-facial-solto-translucido-make-up-hd-vult-3022/2093731830_1_large.jpg' }
+                ];
+            } else if (subtone === 'Subtom Frio') {
+                products = [
+                    { name: 'Base Líquida Acetinada', color: 'Rosa Claro 3F', type: 'Líquida', brand: 'Natura', img: 'https://m.media-amazon.com/images/I/51kOU+IQC5L.jpg' },
+                    { name: 'Corretivo Alta Cobertura', color: 'Claro Frio', type: 'Líquido', brand: 'Make B', img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B82535/Slide15.JPG' },
+                    { name: 'Pó Compacto', color: 'Bege Frio', type: 'Compacto', brand: 'Boticário', img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/products/B75628/Slide7.JPG' }
+                ];
+            } else if (subtone === 'Subtom Neutro') {
+                products = [
+                    { name: 'Base Matte FPS 15', color: 'Bege Neutro 2N', type: 'Matte', brand: 'Tracta', img: 'https://tfczxi.vtexassets.com/arquivos/ids/178955/Base-matte-media-cobertura-oil-free-tracta-cor-01.jpg?v=638133002873600000' },
+                    { name: 'Corretivo Líquido', color: 'Neutro Claro', type: 'Líquido', brand: 'Dailus', img: 'https://lojaslivia.fbitsstatic.net/img/p/corretivo-liquido-dailus-bye-bye-d-1-claro-106486/291662-1.jpg?w=800&h=800&v=no-change&qs=ignore' },
+                    { name: 'Pó Translúcido HD', color: 'Neutro', type: 'Solto', brand: 'RK by Kiss', img: 'https://kissnewyork.vtexassets.com/arquivos/ids/166892/RSP01BR_ABERTO.jpg?v=638479191523800000' }
+                ];
+            }
+            console.log("Subtone na página de recomendações:", subtone); // Verifique este log
+
+            // Renderizar produtos na tabela
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const row = document.createElement('tr');
+
+                const imgCell = document.createElement('td');
+                const img = document.createElement('img');
+                img.src = product.img;
+                img.alt = product.name;
+                img.style.width = '50px';
+                imgCell.appendChild(img);
+                row.appendChild(imgCell);
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = product.name;
+                row.appendChild(nameCell);
+
+                const colorCell = document.createElement('td');
+                colorCell.textContent = product.color;
+                row.appendChild(colorCell);
+
+                const typeCell = document.createElement('td');
+                typeCell.textContent = product.type;
+                row.appendChild(typeCell);
+
+                const brandCell = document.createElement('td');
+                brandCell.textContent = product.brand;
+                row.appendChild(brandCell);
+
+                productList.appendChild(row);
+            });
+        }
+
+        recommendProducts(subtone);
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <p>Oblivion-Contato</p>
+            <p>e-mail: oblivion@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>
+

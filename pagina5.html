@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do subtom</title>
+    <link rel="stylesheet" href="pg5.css">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <a href="index.html" class="site-name">Oblivion</a>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="menu-item">Início</a>
+        </div>
+    </header>
+ 
+    <div class="Tom-selecionado">
+        <h2>Seu subtom:</h2>
+        <div id="subtone-display" class="subtone-display"></div>
+        <h2>Seu tom:</h2>
+        <div id="tone-display" class="tone-display"></div>
+
+        <!-- Botão para redirecionar para a página de recomendação -->
+        <button id="meuBotao" onclick="redirectToRecommendation()">Ver recomendações</button>
+    </div>
+
+    <script>
+        // Função para obter a cor do tom
+        function getToneColor(tone) {
+            switch (tone) {
+                case '1': return '#8d5524'; // Cor para tom 1
+                case '2': return '#c68642'; // Cor para tom 2
+                case '3': return '#e0ac69'; // Cor para tom 3
+                case '4': return '#f1c27d'; // Cor para tom 4
+                case '5': return '#ffdbac'; // Cor para tom 5
+                case '6': return '#7d4f2e'; // Cor para tom 6
+                case '7': return '#b87333'; // Cor para tom 7
+                case '8': return '#d8a068'; // Cor para tom 8
+                case '9': return '#f3c48b'; // Cor para tom 9
+                case '10': return '#ffedc2';  // Cor para tom 10
+                case '11': return '#5a3d2b'; // Cor para tom 11
+                case '12': return '#a67b5b'; // Cor para tom 12
+                default: return '#fff'; // Cor padrão
+            }
+        }
+
+        // Função para detectar o subtom
+        function detectSubtone(color) {
+            const warmColors = ['#8d5524', '#c68642']; // Tons quentes
+            const coolColors = ['#ffdbac']; // Tons frios
+            const neutralColors = ['#e0ac69', '#f1c27d', '#7d4f2e','#b87333','#d8a068', '#f3c48b', '#ffedc2', '#5a3d2b', '#a67b5b']; // Tons neutros
+
+            if (warmColors.includes(color)) {
+                return 'Subtom Quente';
+            } else if (coolColors.includes(color)) {
+                return 'Subtom Frio';
+            } else if (neutralColors.includes(color)) {
+                return 'Subtom Neutro';
+            } else {
+                return 'Neutro';
+            }
+        }
+
+      // Captura o tom selecionado do localStorage
+const selectedTone = localStorage.getItem('selectedTone');
+const toneDisplay = document.getElementById('tone-display');
+const subtoneDisplay = document.getElementById('subtone-display');
+
+if (selectedTone) {
+    toneDisplay.textContent = `Tom de pele ${selectedTone}`;
+    const toneColor = getToneColor(selectedTone);
+    toneDisplay.style.backgroundColor = toneColor;
+    toneDisplay.style.color = "#fff";  // Cor do texto
+
+    // Detecta o subtom com base na cor do tom
+    const subtone = detectSubtone(toneColor);
+    
+
+    subtoneDisplay.textContent = ` ${subtone}`;
+    subtoneDisplay.style.backgroundColor = subtone === 'Subtom Frio' ? '#040699' : subtone === 'Subtom Quente' ? '#B84600' : '#CACACA'; // cores representando subtons
+    subtoneDisplay.style.color = '#fff'; // Cor do texto para contraste
+
+    // Armazena o subtom no localStorage
+    localStorage.setItem('subtone', subtone);
+} else {
+    toneDisplay.textContent = 'Nenhum tom selecionado.';
+    toneDisplay.style.backgroundColor = '#fff'; // Cor padrão
+}
+
+
+        // Função para redirecionar para a página de recomendação
+        function redirectToRecommendation() {
+            window.location.href = 'recomendacao.html'; // Redireciona para a página de recomendação
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <p>Oblivion-Contato</p>
+            <p>e-mail: oblivion@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
